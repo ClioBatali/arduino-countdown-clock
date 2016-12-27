@@ -21,7 +21,7 @@ void loop() {
   int nowMin = (timeRemaining / 60) % 60;
   int nowHrs = (timeRemaining / 3600) % 24;
   int nowDays = (timeRemaining / 86400);
-   
+
   // For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one. This loop checks all LEDs
   for(int i=0;i<numOfPixels;i++){
 
@@ -34,4 +34,5 @@ void loop() {
   }
   delay(1000); // Delay for one second (in milliseconds)
   count-=1; // Updates counter for what "now" is. One second has elapsed
+
 }
