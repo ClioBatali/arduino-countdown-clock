@@ -5,7 +5,7 @@
 #endif
 
 #define pin            17  // the physical pin on the arduino connected to signal -- only 17 will work with the teensy, since no others output 5V (only 3.3V)
-#define numOfPixels    140   // total "pixels" in the strand
+#define numOfPixels    315   // total "pixels" in the strand
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(numOfPixels, pin, NEO_GRB + NEO_KHZ800);
 
@@ -30,7 +30,7 @@ void loop() {
    int nowDays;
    int timeRemaining = 3931200;   // total time in seconds remaining from upload (3931200 = seconds from noon Jan 7th to midnight on Feb 21, 2017)
 
-   while(timeRemaining>=0) { 
+   while (timeRemaining>=0) { 
     nowSec = timeRemaining % 60;
     nowMin = (timeRemaining / 60) % 60;
     nowHrs = (timeRemaining / 3600) % 24;
@@ -60,7 +60,7 @@ void loop() {
   
     pixels.show(); // This sends the updated pixel color to the hardware
   
-    delay(1000); // Delay for one second (in milliseconds)
+    delay(989); // Delay for one second (in milliseconds)
     timeRemaining-=1; // Updates counter for what "now" is. One second has elapsed
    }
 }
@@ -68,88 +68,88 @@ void loop() {
 void draw(int num, int x) {
   if (num==0 || num==8 || num==6) {
      // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-      pixels.setPixelColor(pixArray[0][x], pixels.Color(150,150,150)); // Moderately bright white color
-      pixels.setPixelColor(pixArray[1][x], pixels.Color(150,150,150)); // Left vertical line
-      pixels.setPixelColor(pixArray[2][x], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[3][x], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[4][x], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[5][x], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[6][x], pixels.Color(150,150,150));
+      pixels.setPixelColor(pixArray[0][x], pixels.Color(65,65,65)); // Moderately bright white color
+      pixels.setPixelColor(pixArray[1][x], pixels.Color(65,65,65)); // Left vertical line
+      pixels.setPixelColor(pixArray[2][x], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[3][x], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[4][x], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[5][x], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[6][x], pixels.Color(65,65,65));
 
-      pixels.setPixelColor(pixArray[0][x+3], pixels.Color(150,150,150)); // Part of right vertical line
-      pixels.setPixelColor(pixArray[1][x+3], pixels.Color(150,150,150)); 
-      pixels.setPixelColor(pixArray[2][x+3], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[3][x+3], pixels.Color(150,150,150));
+      pixels.setPixelColor(pixArray[0][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[3][x+3], pixels.Color(65,65,65)); // Part of right vertical line
+      pixels.setPixelColor(pixArray[4][x+3], pixels.Color(65,65,65)); 
+      pixels.setPixelColor(pixArray[5][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[6][x+3], pixels.Color(65,65,65));
       
       if(num==8 || num==0) {
-        pixels.setPixelColor(pixArray[4][x+3], pixels.Color(150,150,150)); // The rest of the right vertical line
-        pixels.setPixelColor(pixArray[5][x+3], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[6][x+3], pixels.Color(150,150,150));
+        pixels.setPixelColor(pixArray[1][x+3], pixels.Color(65,65,65)); // The rest of the right vertical line
+        pixels.setPixelColor(pixArray[2][x+3], pixels.Color(65,65,65));
       }
 
-      pixels.setPixelColor(pixArray[0][x+1], pixels.Color(150,150,150)); // Top and bottom
-      pixels.setPixelColor(pixArray[0][x+2], pixels.Color(150,150,150)); 
-      pixels.setPixelColor(pixArray[6][x+1], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[6][x+2], pixels.Color(150,150,150));
+      pixels.setPixelColor(pixArray[0][x+1], pixels.Color(65,65,65)); // Top and bottom
+      pixels.setPixelColor(pixArray[0][x+2], pixels.Color(65,65,65)); 
+      pixels.setPixelColor(pixArray[6][x+1], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[6][x+2], pixels.Color(65,65,65));
 
       if (num==8 || num==6) {
-        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(150,150,150)); // Middle just for 8 and 6
-        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(150,150,150));
+        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(65,65,65)); // Middle just for 8 and 6
+        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(65,65,65));
       }
 
   } else if (num==1 || num==7 || num==9 || num==4 || num==3) {
-      pixels.setPixelColor(pixArray[0][x+3], pixels.Color(150,150,150)); // Right vertical line
-      pixels.setPixelColor(pixArray[1][x+3], pixels.Color(150,150,150)); 
-      pixels.setPixelColor(pixArray[2][x+3], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[3][x+3], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[4][x+3], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[5][x+3], pixels.Color(150,150,150));
-      pixels.setPixelColor(pixArray[6][x+3], pixels.Color(150,150,150));
+      pixels.setPixelColor(pixArray[0][x+3], pixels.Color(65,65,65)); // Right vertical line
+      pixels.setPixelColor(pixArray[1][x+3], pixels.Color(65,65,65)); 
+      pixels.setPixelColor(pixArray[2][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[3][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[4][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[5][x+3], pixels.Color(65,65,65));
+      pixels.setPixelColor(pixArray[6][x+3], pixels.Color(65,65,65));
       
       if(num==7 || num==9 || num==3) {
-        pixels.setPixelColor(pixArray[0][x], pixels.Color(150,150,150)); // Top just for 7, 3, and 9
-        pixels.setPixelColor(pixArray[0][x+1], pixels.Color(150,150,150)); 
-        pixels.setPixelColor(pixArray[0][x+2], pixels.Color(150,150,150));
+        pixels.setPixelColor(pixArray[0][x], pixels.Color(65,65,65)); // Top just for 7, 3, and 9
+        pixels.setPixelColor(pixArray[0][x+1], pixels.Color(65,65,65)); 
+        pixels.setPixelColor(pixArray[0][x+2], pixels.Color(65,65,65));
         if (num==9 || num==3) {
-          pixels.setPixelColor(pixArray[6][x], pixels.Color(150,150,150)); // Bottom just for 3 and 9
-          pixels.setPixelColor(pixArray[6][x+1], pixels.Color(150,150,150)); 
-          pixels.setPixelColor(pixArray[6][x+2], pixels.Color(150,150,150));
+          pixels.setPixelColor(pixArray[6][x], pixels.Color(65,65,65)); // Bottom just for 3 and 9
+          pixels.setPixelColor(pixArray[6][x+1], pixels.Color(65,65,65)); 
+          pixels.setPixelColor(pixArray[6][x+2], pixels.Color(65,65,65));
         }
       } 
       
       if (num==4 || num==9 || num==3) {
-        pixels.setPixelColor(pixArray[3][x], pixels.Color(150,150,150)); // Middle for 4, 9, and 3
-        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(150,150,150)); 
-        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(150,150,150));
+        pixels.setPixelColor(pixArray[3][x], pixels.Color(65,65,65)); // Middle for 4, 9, and 3
+        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(65,65,65)); 
+        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(65,65,65));
         if (num==4 || num==9) {
-          pixels.setPixelColor(pixArray[0][x], pixels.Color(150,150,150)); // Left top side for 9 and 4
-          pixels.setPixelColor(pixArray[1][x], pixels.Color(150,150,150)); 
-          pixels.setPixelColor(pixArray[2][x], pixels.Color(150,150,150));
+          pixels.setPixelColor(pixArray[0][x], pixels.Color(65,65,65)); // Left top side for 9 and 4
+          pixels.setPixelColor(pixArray[1][x], pixels.Color(65,65,65)); 
+          pixels.setPixelColor(pixArray[2][x], pixels.Color(65,65,65));
         }
       }
   } else if (num==2 || num==5) {
-        pixels.setPixelColor(pixArray[0][x], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[0][x+1], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[0][x+2], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[0][x+3], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[3][x], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[3][x+3], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[6][x], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[6][x+1], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[6][x+2], pixels.Color(150,150,150));
-        pixels.setPixelColor(pixArray[6][x+3], pixels.Color(150,150,150));
+        pixels.setPixelColor(pixArray[0][x], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[0][x+1], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[0][x+2], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[0][x+3], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[3][x], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[3][x+1], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[3][x+2], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[3][x+3], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[6][x], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[6][x+1], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[6][x+2], pixels.Color(65,65,65));
+        pixels.setPixelColor(pixArray[6][x+3], pixels.Color(65,65,65));
         if (num==2) {
-          pixels.setPixelColor(pixArray[1][x+3], pixels.Color(150,150,150)); // Right top side for 2
-          pixels.setPixelColor(pixArray[2][x+3], pixels.Color(150,150,150));
-          pixels.setPixelColor(pixArray[4][x], pixels.Color(150,150,150)); // Left bottom side for 2
-          pixels.setPixelColor(pixArray[5][x], pixels.Color(150,150,150));
+          pixels.setPixelColor(pixArray[1][x+3], pixels.Color(65,65,65)); // Right top side for 2
+          pixels.setPixelColor(pixArray[2][x+3], pixels.Color(65,65,65));
+          pixels.setPixelColor(pixArray[4][x], pixels.Color(65,65,65)); // Left bottom side for 2
+          pixels.setPixelColor(pixArray[5][x], pixels.Color(65,65,65));
         } else if (num==5) { 
-          pixels.setPixelColor(pixArray[1][x], pixels.Color(150,150,150)); // Left top side for 5
-          pixels.setPixelColor(pixArray[2][x], pixels.Color(150,150,150));
-          pixels.setPixelColor(pixArray[4][x+3], pixels.Color(150,150,150)); // Right bottom side for 5
-          pixels.setPixelColor(pixArray[5][x+3], pixels.Color(150,150,150)); 
+          pixels.setPixelColor(pixArray[1][x], pixels.Color(65,65,65)); // Left top side for 5
+          pixels.setPixelColor(pixArray[2][x], pixels.Color(65,65,65));
+          pixels.setPixelColor(pixArray[4][x+3], pixels.Color(65,65,65)); // Right bottom side for 5
+          pixels.setPixelColor(pixArray[5][x+3], pixels.Color(65,65,65)); 
         }
   } else {
   }
@@ -157,7 +157,7 @@ void draw(int num, int x) {
 }
 
 void drawColon(int x) {
-  pixels.setPixelColor(pixArray[2][x], pixels.Color(150,150,150)); 
-  pixels.setPixelColor(pixArray[4][x], pixels.Color(150,150,150)); 
+  pixels.setPixelColor(pixArray[2][x], pixels.Color(65,65,65)); 
+  pixels.setPixelColor(pixArray[4][x], pixels.Color(65,65,65)); 
 }
 
